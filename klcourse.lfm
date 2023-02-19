@@ -1,0 +1,21 @@
+object Form_Course: TForm_Course
+  Left = 779
+  Height = 489
+  Top = 119
+  Width = 1070
+  Caption = 'Verlauf'
+  ClientHeight = 489
+  ClientWidth = 1070
+  DesignTimePPI = 120
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.2.4.0'
+  object PB_Course: TPaintBox
+    Left = 0
+    Height = 391
+    Top = 0
+    Width = 856
+    Align = alClient
+    OnPaint = PB_CoursePaint
+  end
+end

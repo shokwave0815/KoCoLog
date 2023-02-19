@@ -1,0 +1,349 @@
+object Form_Filter: TForm_Filter
+  Left = 929
+  Height = 245
+  Top = 113
+  Width = 732
+  BorderIcons = [biSystemMenu]
+  Caption = 'Filter'
+  ClientHeight = 245
+  ClientWidth = 732
+  DesignTimePPI = 120
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.2.4.0'
+  object CoBo_Col: TComboBox
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = Label1
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 21
+    Top = 38
+    Width = 125
+    BorderSpacing.Top = 6
+    ItemHeight = 19
+    Items.Strings = (
+      'Zeit'
+      'Rubrik'
+      'Typ'
+      'Parameter'
+    )
+    Style = csOwnerDrawFixed
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    Left = 12
+    Height = 15
+    Top = 12
+    Width = 32
+    BorderSpacing.Left = 12
+    BorderSpacing.Top = 12
+    Caption = 'Spalte'
+    ParentColor = False
+  end
+  object Edit_Filter: TEdit
+    AnchorSideLeft.Control = CoBo_Operator
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = CoBo_Operator
+    AnchorSideRight.Control = CoBo_AndOr
+    Left = 275
+    Height = 23
+    Top = 38
+    Width = 295
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Right = 6
+    TabOrder = 2
+  end
+  object Label3: TLabel
+    AnchorSideLeft.Control = Edit_Filter
+    AnchorSideTop.Control = Label1
+    Left = 275
+    Height = 15
+    Top = 12
+    Width = 21
+    Caption = 'Text'
+    ParentColor = False
+  end
+  object Btn_Filter: TButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 12
+    Height = 31
+    Top = 155
+    Width = 94
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.Left = 12
+    BorderSpacing.Bottom = 12
+    Caption = 'Filtern'
+    Default = True
+    OnClick = Btn_FilterClick
+    TabOrder = 16
+  end
+  object Btn_Cancel: TButton
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 482
+    Height = 31
+    Top = 155
+    Width = 94
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 12
+    BorderSpacing.Bottom = 12
+    Cancel = True
+    Caption = 'Abbrechen'
+    OnClick = Btn_CancelClick
+    TabOrder = 17
+  end
+  object ChBo_CaseSensitive: TCheckBox
+    AnchorSideLeft.Control = CoBo_Col
+    AnchorSideTop.Control = CoBo_Operator3
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 19
+    Top = 168
+    Width = 193
+    BorderSpacing.Top = 6
+    Caption = 'Groß-/Kleinschreibung beachten'
+    TabOrder = 15
+  end
+  object CoBo_Operator: TComboBox
+    AnchorSideLeft.Control = CoBo_Col
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = CoBo_Col
+    Left = 144
+    Height = 21
+    Top = 38
+    Width = 125
+    BorderSpacing.Left = 6
+    ItemHeight = 19
+    ItemIndex = 0
+    Items.Strings = (
+      'enthät'
+      'enthält nicht'
+    )
+    Style = csOwnerDrawFixed
+    TabOrder = 1
+    Text = 'enthät'
+  end
+  object Edit_Filter1: TEdit
+    AnchorSideLeft.Control = CoBo_Operator1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = CoBo_Operator1
+    AnchorSideRight.Control = CoBo_AndOr
+    Left = 275
+    Height = 23
+    Top = 70
+    Width = 295
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Right = 6
+    TabOrder = 6
+  end
+  object CoBo_Operator1: TComboBox
+    AnchorSideLeft.Control = CoBo_Col1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = CoBo_Col1
+    Left = 144
+    Height = 21
+    Top = 70
+    Width = 125
+    BorderSpacing.Left = 6
+    ItemHeight = 19
+    ItemIndex = 0
+    Items.Strings = (
+      'enthät'
+      'enthält nicht'
+    )
+    Style = csOwnerDrawFixed
+    TabOrder = 5
+    Text = 'enthät'
+  end
+  object CoBo_Col1: TComboBox
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = CoBo_Col
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 21
+    Top = 70
+    Width = 125
+    BorderSpacing.Top = 6
+    ItemHeight = 19
+    Items.Strings = (
+      'Zeit'
+      'Rubrik'
+      'Typ'
+      'Parameter'
+    )
+    Style = csOwnerDrawFixed
+    TabOrder = 4
+  end
+  object CoBo_AndOr: TComboBox
+    AnchorSideTop.Control = CoBo_Col
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 506
+    Height = 21
+    Top = 38
+    Width = 70
+    Anchors = [akTop, akRight]
+    BorderSpacing.Right = 12
+    ItemHeight = 19
+    Items.Strings = (
+      ''
+      'UND'
+      'ODER'
+    )
+    OnChange = CoBo_AndOrChange
+    Style = csOwnerDrawFixed
+    TabOrder = 3
+  end
+  object CoBo_Col2: TComboBox
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = CoBo_Col1
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 21
+    Top = 102
+    Width = 125
+    BorderSpacing.Top = 6
+    ItemHeight = 19
+    Items.Strings = (
+      'Zeit'
+      'Rubrik'
+      'Typ'
+      'Parameter'
+    )
+    Style = csOwnerDrawFixed
+    TabOrder = 8
+  end
+  object CoBo_Operator2: TComboBox
+    AnchorSideLeft.Control = CoBo_Col2
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = CoBo_Col2
+    Left = 144
+    Height = 21
+    Top = 102
+    Width = 125
+    BorderSpacing.Left = 6
+    ItemHeight = 19
+    ItemIndex = 0
+    Items.Strings = (
+      'enthät'
+      'enthält nicht'
+    )
+    Style = csOwnerDrawFixed
+    TabOrder = 9
+    Text = 'enthät'
+  end
+  object Edit_Filter2: TEdit
+    AnchorSideLeft.Control = CoBo_Operator2
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = CoBo_Operator2
+    AnchorSideRight.Control = CoBo_AndOr1
+    Left = 275
+    Height = 23
+    Top = 102
+    Width = 295
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Right = 6
+    TabOrder = 10
+  end
+  object CoBo_AndOr1: TComboBox
+    AnchorSideTop.Control = CoBo_Col1
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 506
+    Height = 21
+    Top = 70
+    Width = 70
+    Anchors = [akTop, akRight]
+    BorderSpacing.Right = 12
+    ItemHeight = 19
+    Items.Strings = (
+      ''
+      'UND'
+      'ODER'
+    )
+    OnChange = CoBo_AndOrChange
+    Style = csOwnerDrawFixed
+    TabOrder = 7
+  end
+  object CoBo_Col3: TComboBox
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = CoBo_Col2
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 21
+    Top = 135
+    Width = 125
+    BorderSpacing.Top = 6
+    ItemHeight = 19
+    Items.Strings = (
+      'Zeit'
+      'Rubrik'
+      'Typ'
+      'Parameter'
+    )
+    Style = csOwnerDrawFixed
+    TabOrder = 12
+  end
+  object CoBo_Operator3: TComboBox
+    AnchorSideLeft.Control = CoBo_Col3
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = CoBo_Col3
+    Left = 144
+    Height = 21
+    Top = 135
+    Width = 125
+    BorderSpacing.Left = 6
+    ItemHeight = 19
+    ItemIndex = 0
+    Items.Strings = (
+      'enthät'
+      'enthält nicht'
+    )
+    Style = csOwnerDrawFixed
+    TabOrder = 13
+    Text = 'enthät'
+  end
+  object Edit_Filter3: TEdit
+    AnchorSideLeft.Control = CoBo_Operator3
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = CoBo_Operator3
+    AnchorSideRight.Control = CoBo_AndOr
+    Left = 275
+    Height = 23
+    Top = 135
+    Width = 295
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Right = 6
+    TabOrder = 14
+  end
+  object CoBo_AndOr2: TComboBox
+    AnchorSideTop.Control = CoBo_Col2
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 506
+    Height = 21
+    Top = 102
+    Width = 70
+    Anchors = [akTop, akRight]
+    BorderSpacing.Right = 12
+    ItemHeight = 19
+    Items.Strings = (
+      ''
+      'UND'
+      'ODER'
+    )
+    OnChange = CoBo_AndOrChange
+    Style = csOwnerDrawFixed
+    TabOrder = 11
+  end
+end

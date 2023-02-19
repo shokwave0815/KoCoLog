@@ -1,0 +1,131 @@
+object Form_Main: TForm_Main
+  Left = 392
+  Height = 650
+  Top = 111
+  Width = 1231
+  Caption = 'KoCoLog'
+  ClientHeight = 650
+  ClientWidth = 1231
+  DesignTimePPI = 120
+  Menu = MainMenu1
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  OnWindowStateChange = FormWindowStateChange
+  object StringGrid_Main: TStringGrid
+    Left = 0
+    Height = 621
+    Top = 0
+    Width = 1231
+    Align = alClient
+    ColCount = 4
+    Columns = <    
+      item
+        MinSize = 12
+        MaxSize = 250
+        Title.Caption = 'Zeit'
+        Width = 188
+      end    
+      item
+        MinSize = 12
+        MaxSize = 2500
+        Title.Caption = 'Rubrik'
+        Width = 375
+      end    
+      item
+        MinSize = 12
+        MaxSize = 250
+        Title.Caption = 'Typ'
+        Width = 80
+      end    
+      item
+        MinSize = 12
+        MaxSize = 2500
+        Title.Caption = 'Parameter'
+        Width = 1250
+      end>
+    ExtendedSelect = False
+    FixedCols = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goEditing, goRowSelect, goDblClickAutoSize, goSmoothScroll, goScrollKeepVisible]
+    ParentFont = False
+    RowCount = 1
+    TabOrder = 0
+    OnDrawCell = StringGrid_MainDrawCell
+    ColWidths = (
+      188
+      375
+      80
+      1250
+    )
+    Cells = (
+      1
+      0
+      0
+      'Zeit'
+    )
+  end
+  object SBar: TStatusBar
+    Left = 0
+    Height = 29
+    Top = 621
+    Width = 1231
+    Panels = <>
+    ParentFont = False
+  end
+  object MainMenu1: TMainMenu
+    Left = 44
+    Top = 36
+    object MenuItem1: TMenuItem
+      Caption = '&Datei'
+      object MenIt_Open: TMenuItem
+        Caption = 'Ö&ffnen'
+        ShortCut = 16463
+        OnClick = MenIt_OpenClick
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object MenIt_Close: TMenuItem
+        Caption = 'Beenden'
+        ShortCut = 16465
+        OnClick = MenIt_CloseClick
+      end
+    end
+    object MenuItem4: TMenuItem
+      Caption = '&Ansicht'
+      object MenIt_Filter: TMenuItem
+        Caption = '&Filter setzen'
+        ShortCut = 49222
+        OnClick = MenIt_FilterClick
+      end
+      object MenIt_Descending: TMenuItem
+        Caption = '&Neue Einträge zu erst'
+        ShowAlwaysCheckable = True
+        OnClick = MenIt_DescendingClick
+      end
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Aus&wertung'
+      object MenIt_Course: TMenuItem
+        Caption = '&Verlauf'
+        OnClick = MenIt_CourseClick
+      end
+    end
+    object MenuItem2: TMenuItem
+      Caption = '&?'
+      object MenIt_About: TMenuItem
+        Caption = 'Über &KoCoLog'
+        ShortCut = 112
+        OnClick = MenIt_AboutClick
+      end
+    end
+  end
+  object OpDi: TOpenDialog
+    DefaultExt = '.*.log'
+    Filter = 'Logfile(*.log)|*.log|Alle Dateien|*.*'
+    FilterIndex = 0
+    InitialDir = '.'
+    Left = 140
+    Top = 36
+  end
+end
