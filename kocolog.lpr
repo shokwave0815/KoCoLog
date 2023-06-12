@@ -17,17 +17,24 @@ program kocolog;
 {$mode objfpc}{$H+}
 
 uses
-    {$IFDEF UNIX}{$IFDEF UseCThreads}cthreads,{$ENDIF}{$ENDIF}
-	   Interfaces, Forms,	klmain,	klfilter,	kltextutil,	klcourse;
+ {$IFDEF UNIX}{$IFDEF UseCThreads}
+  cthreads,
+   {$ENDIF} {$ENDIF}
+    Interfaces, // this includes the LCL widgetset
+    Forms,
+    klmain,
+    klfilter,
+    kltextutil,
+    klcourse { you can add units after this };
 
 {$R *.res}
 
 begin
-	   RequireDerivedFormResource := True;
-	   Application.Scaled := True;
-	   Application.Initialize;
-	   Application.CreateForm( TForm_Main, Form_Main );
-	   Application.CreateForm( TForm_Filter, Form_Filter );
-	   Application.CreateForm( TForm_Course, Form_Course );
-	   Application.Run;
+    RequireDerivedFormResource := True;
+    Application.Scaled := True;
+    Application.Initialize;
+    Application.CreateForm(TForm_Main, Form_Main);
+    Application.CreateForm(TForm_Filter, Form_Filter);
+    Application.CreateForm(TForm_Course, Form_Course);
+    Application.Run;
 end.

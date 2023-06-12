@@ -1,12 +1,11 @@
 object Form_Course: TForm_Course
   Left = 779
-  Height = 489
+  Height = 391
   Top = 119
-  Width = 1070
+  Width = 856
   Caption = 'Verlauf'
-  ClientHeight = 489
-  ClientWidth = 1070
-  DesignTimePPI = 120
+  ClientHeight = 391
+  ClientWidth = 856
   OnShow = FormShow
   Position = poMainFormCenter
   LCLVersion = '2.2.4.0'
