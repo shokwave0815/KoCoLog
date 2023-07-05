@@ -151,6 +151,7 @@ begin
     Lab_Topic.Caption:= StringGrid_Main.Cells[1, aRow];
     Lab_Type.Caption:= StringGrid_Main.Cells[2, aRow];
     Memo_Param.Text:= StringGrid_Main.Cells[3, aRow];
+    aCol := aCol;
 end;
 
 {******************************************************************************

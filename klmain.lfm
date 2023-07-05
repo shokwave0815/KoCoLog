@@ -159,13 +159,12 @@ object Form_Main: TForm_Main
       AnchorSideTop.Control = Label1
       AnchorSideRight.Control = Label4
       Left = 47
-      Height = 15
+      Height = 1
       Top = 5
       Width = 145
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Left = 5
       BorderSpacing.Right = 5
-      Caption = 'Lab_Time'
       ParentColor = False
     end
     object Lab_Topic: TLabel
@@ -173,12 +172,11 @@ object Form_Main: TForm_Main
       AnchorSideTop.Control = Label2
       AnchorSideRight.Control = Label4
       Left = 47
-      Height = 15
+      Height = 1
       Top = 25
       Width = 145
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Right = 5
-      Caption = 'Lab_Topic'
       ParentColor = False
     end
     object Lab_Type: TLabel
@@ -186,12 +184,11 @@ object Form_Main: TForm_Main
       AnchorSideTop.Control = Label3
       AnchorSideRight.Control = Label4
       Left = 47
-      Height = 15
+      Height = 1
       Top = 45
       Width = 145
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Right = 5
-      Caption = 'Lab_Type'
       ParentColor = False
     end
   end
