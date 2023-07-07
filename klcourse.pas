@@ -110,20 +110,20 @@ var
 begin
 
     case MessageType of
-        'FATAL':
+        'WARN':
         begin
-            PB_Course.Canvas.Pen.Color := clPurple;
-            yOffset := 60;
+            PB_Course.Canvas.Pen.Color := TColor($10CAEC);
+            yOffset := 100;
         end;
         'ERR':
         begin
-            PB_Course.Canvas.Pen.Color := clRed;
+            PB_Course.Canvas.Pen.Color := TColor($A0A0FF);
             yOffset := 80;
         end;
-        'WARN':
+        'FATAL':
         begin
-            PB_Course.Canvas.Pen.Color := TColor($00BBBB);
-            yOffset := 100;
+            PB_Course.Canvas.Pen.Color := TColor($D050D0);
+            yOffset := 60;
         end;
         else
         begin

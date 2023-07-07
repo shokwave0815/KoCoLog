@@ -9,7 +9,7 @@ uses
     ExtCtrls, StdCtrls, klfilter, Types, INIFiles, kltextutil, klcourse;
 
 const
-    MY_VERSION = 'KoCoLog V0.7.14a';
+    MY_VERSION = 'KoCoLog V0.7.14b';
 
 type
 
@@ -123,11 +123,11 @@ begin
     if (not (gdFixed in aState)) then
     begin
         case StringGrid_Main.Cells[2, aRow] of
+            'WARN': begin
+                StringGrid_Main.canvas.Brush.Color := TColor($10CAEC);
+            end;
             'ERR': begin
                 StringGrid_Main.canvas.Brush.Color := TColor($A0A0FF);
-            end;
-            'WARN': begin
-                StringGrid_Main.canvas.Brush.Color := TColor($00CCCC);
             end;
             'FATAL': begin
                 StringGrid_Main.canvas.Brush.Color := TColor($D050D0);
