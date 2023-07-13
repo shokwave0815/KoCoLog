@@ -46,7 +46,7 @@ object Form_Main: TForm_Main
       end>
     ExtendedSelect = False
     FixedCols = 0
-    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goEditing, goRowSelect, goSmoothScroll, goScrollKeepVisible]
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goRowSelect, goSmoothScroll, goScrollKeepVisible]
     ParentFont = False
     RowCount = 1
     TabOrder = 0
