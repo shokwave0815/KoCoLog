@@ -229,6 +229,10 @@ begin
         if (ReadFile(Filename, StringGrid_Main, MenIt_Descending.Checked)) then
         begin
             SBar.SimpleText := 'Anzahl Einträge: ' + Format('%.0N', [StringGrid_Main.RowCount / 1]);
+            if (Form_Filter.IsFiltered) then
+            begin
+                SBar.SimpleText := SBar.SimpleText + '(gefiltert)';
+            end;
         end else
         begin
             SBar.SimpleText := 'Fehler beim lesen der Datei "' + Filename + '"';

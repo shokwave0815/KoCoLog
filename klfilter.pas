@@ -208,6 +208,7 @@ var
     aMatch: boolean;
     FromDate, ToDate, CurrDate: TDateTime;
 begin
+    Result := true;
     //erster Filter
     if (CoBo_Col.ItemIndex >= 0) then
     begin
