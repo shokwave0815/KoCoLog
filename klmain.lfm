@@ -4,14 +4,13 @@ object Form_Main: TForm_Main
   Top = 111
   Width = 985
   Caption = 'KoCoLog'
-  ClientHeight = 500
+  ClientHeight = 520
   ClientWidth = 985
   Menu = MainMenu1
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
   OnWindowStateChange = FormWindowStateChange
-  LCLVersion = '2.2.0.4'
   object StringGrid_Main: TStringGrid
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Owner

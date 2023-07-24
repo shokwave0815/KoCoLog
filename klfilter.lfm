@@ -9,7 +9,6 @@ object Form_Filter: TForm_Filter
   ClientWidth = 586
   OnShow = FormShow
   Position = poMainFormCenter
-  LCLVersion = '2.2.0.4'
   object CoBo_Col: TComboBox
     AnchorSideLeft.Control = Label1
     AnchorSideTop.Control = Label1
@@ -77,7 +76,7 @@ object Form_Filter: TForm_Filter
     Caption = 'Filtern'
     Default = True
     OnClick = Btn_FilterClick
-    TabOrder = 16
+    TabOrder = 18
   end
   object Btn_Cancel: TButton
     AnchorSideRight.Control = Owner
@@ -94,7 +93,7 @@ object Form_Filter: TForm_Filter
     Cancel = True
     Caption = 'Abbrechen'
     OnClick = Btn_CancelClick
-    TabOrder = 17
+    TabOrder = 19
   end
   object ChBo_CaseSensitive: TCheckBox
     AnchorSideLeft.Control = CoBo_Col
@@ -358,7 +357,7 @@ object Form_Filter: TForm_Filter
     ClientHeight = 41
     ClientWidth = 567
     Enabled = False
-    TabOrder = 18
+    TabOrder = 17
     object Label2: TLabel
       AnchorSideLeft.Control = GrBo_Timespan
       AnchorSideTop.Control = GrBo_Timespan
@@ -449,6 +448,6 @@ object Form_Filter: TForm_Filter
     Width = 68
     Caption = 'Zeitraum'
     OnChange = ChBo_TimespanChange
-    TabOrder = 19
+    TabOrder = 16
   end
 end
