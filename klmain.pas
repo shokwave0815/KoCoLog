@@ -9,7 +9,7 @@ uses
     ExtCtrls, StdCtrls, klfilter, Types, INIFiles, kltextutil, klcourse;
 
 const
-    MY_VERSION = 'KoCoLog V0.7.14b';
+    MY_VERSION = 'KoCoLog V0.7.15';
 
 type
 
