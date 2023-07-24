@@ -3,7 +3,7 @@
   <ProjectSession>
     <PathDelim Value="\"/>
     <Version Value="12"/>
-    <BuildModes Active="Debug"/>
+    <BuildModes Active="Release"/>
     <Units Count="8">
       <Unit0>
         <Filename Value="kocolog.lpr"/>
@@ -19,7 +19,8 @@
         <ComponentName Value="Form_Main"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <CursorPos X="35" Y="12"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="34" Y="12"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -30,7 +31,6 @@
         <ComponentName Value="Form_Filter"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <CursorPos X="92" Y="79"/>
         <UsageCount Value="35"/>

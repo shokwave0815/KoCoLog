@@ -21,7 +21,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="7"/>
-      <RevisionNr Value="11"/>
+      <RevisionNr Value="15"/>
       <BuildNr Value="17"/>
       <Language Value="0407"/>
       <StringTable Comments="Zur Anzeige der Logs der KoCoBox" CompanyName="privat" FileDescription="Loganzeige für KoCoBox" InternalName="ProtView" LegalCopyright="©2021 by Ingo Steiniger" OriginalFilename="kocolog.exe" ProductName="KoCoLog" ProductVersion="0.7"/>
