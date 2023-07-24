@@ -1,11 +1,11 @@
 object Form_Filter: TForm_Filter
   Left = 929
-  Height = 269
+  Height = 274
   Top = 113
   Width = 586
   BorderIcons = [biSystemMenu]
   Caption = 'Filter'
-  ClientHeight = 269
+  ClientHeight = 274
   ClientWidth = 586
   OnShow = FormShow
   Position = poMainFormCenter
@@ -70,7 +70,7 @@ object Form_Filter: TForm_Filter
     AnchorSideBottom.Side = asrBottom
     Left = 10
     Height = 25
-    Top = 234
+    Top = 239
     Width = 75
     Anchors = [akLeft, akBottom]
     BorderSpacing.Left = 10
@@ -87,7 +87,7 @@ object Form_Filter: TForm_Filter
     AnchorSideBottom.Side = asrBottom
     Left = 501
     Height = 25
-    Top = 234
+    Top = 239
     Width = 75
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 10
@@ -345,71 +345,101 @@ object Form_Filter: TForm_Filter
     TabOrder = 11
   end
   object GrBo_Timespan: TGroupBox
+    AnchorSideLeft.Control = ChBo_Timespan
+    AnchorSideTop.Control = ChBo_Timespan
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
     Left = 10
-    Height = 48
-    Top = 184
-    Width = 562
-    Caption = 'Zeitraum'
-    ClientHeight = 28
-    ClientWidth = 558
+    Height = 61
+    Top = 171
+    Width = 571
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Right = 5
+    ClientHeight = 41
+    ClientWidth = 567
     Enabled = False
     TabOrder = 18
     object Label2: TLabel
-      Left = 11
+      AnchorSideLeft.Control = GrBo_Timespan
+      AnchorSideTop.Control = GrBo_Timespan
+      Left = 5
       Height = 15
-      Top = 2
+      Top = 5
       Width = 20
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
       Caption = 'von'
       ParentColor = False
     end
     object Date_From: TDateEdit
-      Left = 42
+      AnchorSideLeft.Control = Label2
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label2
+      Left = 30
       Height = 23
-      Top = 2
+      Top = 5
       Width = 103
       CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
       DateOrder = doNone
       ButtonWidth = 23
+      BorderSpacing.Left = 5
       NumGlyphs = 1
       MaxLength = 0
       TabOrder = 0
     end
     object Time_From: TTimeEdit
-      Left = 158
+      AnchorSideLeft.Control = Date_From
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Date_From
+      Left = 138
       Height = 23
-      Top = 2
+      Top = 5
       Width = 103
       ButtonWidth = 23
+      BorderSpacing.Left = 5
       NumGlyphs = 1
       MaxLength = 0
       TabOrder = 1
     end
     object Label4: TLabel
-      Left = 269
+      AnchorSideLeft.Control = Time_From
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Time_From
+      Left = 246
       Height = 15
       Top = 5
       Width = 15
+      BorderSpacing.Left = 5
       Caption = 'bis'
       ParentColor = False
     end
     object Date_To: TDateEdit
-      Left = 299
+      AnchorSideLeft.Control = Label4
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label4
+      Left = 266
       Height = 23
-      Top = 2
+      Top = 5
       Width = 103
       CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
       DateOrder = doNone
       ButtonWidth = 23
+      BorderSpacing.Left = 5
       NumGlyphs = 1
       MaxLength = 0
       TabOrder = 2
     end
     object Time_To: TTimeEdit
-      Left = 412
+      AnchorSideLeft.Control = Date_To
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Date_To
+      Left = 374
       Height = 23
-      Top = 2
+      Top = 5
       Width = 103
       ButtonWidth = 23
+      BorderSpacing.Left = 5
       NumGlyphs = 1
       MaxLength = 0
       TabOrder = 3
