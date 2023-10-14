@@ -11,6 +11,7 @@ object Form_Main: TForm_Main
   OnCreate = FormCreate
   OnShow = FormShow
   OnWindowStateChange = FormWindowStateChange
+  LCLVersion = '2.2.6.0'
   object StringGrid_Main: TStringGrid
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Owner
@@ -83,8 +84,8 @@ object Form_Main: TForm_Main
     Width = 985
     Align = alBottom
     Caption = 'Details'
-    ClientHeight = 83
-    ClientWidth = 981
+    ClientHeight = 85
+    ClientWidth = 983
     TabOrder = 2
     object Label1: TLabel
       AnchorSideLeft.Control = GroupBox1
@@ -96,6 +97,7 @@ object Form_Main: TForm_Main
       BorderSpacing.Left = 5
       BorderSpacing.Top = 5
       Caption = 'Zeit:'
+      ParentColor = False
     end
     object Label2: TLabel
       AnchorSideLeft.Control = Label1
@@ -107,6 +109,7 @@ object Form_Main: TForm_Main
       Width = 37
       BorderSpacing.Top = 5
       Caption = 'Rubrik:'
+      ParentColor = False
     end
     object Label3: TLabel
       AnchorSideLeft.Control = Label1
@@ -118,6 +121,7 @@ object Form_Main: TForm_Main
       Width = 18
       BorderSpacing.Top = 5
       Caption = 'Typ'
+      ParentColor = False
     end
     object Label4: TLabel
       AnchorSideLeft.Control = Lab_Time
@@ -129,6 +133,7 @@ object Form_Main: TForm_Main
       Width = 57
       Anchors = [akTop]
       Caption = 'Parameter:'
+      ParentColor = False
     end
     object Memo_Param: TMemo
       AnchorSideLeft.Control = Label4
@@ -161,6 +166,7 @@ object Form_Main: TForm_Main
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Left = 5
       BorderSpacing.Right = 5
+      ParentColor = False
     end
     object Lab_Topic: TLabel
       AnchorSideLeft.Control = Lab_Time
@@ -172,6 +178,7 @@ object Form_Main: TForm_Main
       Width = 145
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Right = 5
+      ParentColor = False
     end
     object Lab_Type: TLabel
       AnchorSideLeft.Control = Lab_Topic
@@ -183,6 +190,7 @@ object Form_Main: TForm_Main
       Width = 145
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Right = 5
+      ParentColor = False
     end
   end
   object MainMenu1: TMainMenu

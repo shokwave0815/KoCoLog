@@ -20,8 +20,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="216"/>
-        <CursorPos X="47" Y="231"/>
+        <CursorPos X="16" Y="7"/>
         <UsageCount Value="36"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -33,8 +32,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="145"/>
-        <CursorPos X="19" Y="211"/>
+        <CursorPos X="18" Y="214"/>
         <UsageCount Value="36"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -43,7 +41,8 @@
         <Filename Value="kltextutil.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
-        <CursorPos X="67" Y="165"/>
+        <TopLine Value="154"/>
+        <CursorPos X="68" Y="173"/>
         <UsageCount Value="36"/>
         <Loaded Value="True"/>
       </Unit3>
@@ -54,7 +53,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="3"/>
-        <CursorPos Y="118"/>
+        <TopLine Value="100"/>
+        <CursorPos X="11" Y="119"/>
         <UsageCount Value="36"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>

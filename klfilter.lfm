@@ -9,6 +9,7 @@ object Form_Filter: TForm_Filter
   ClientWidth = 586
   OnShow = FormShow
   Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
   object CoBo_Col: TComboBox
     AnchorSideLeft.Control = Label1
     AnchorSideTop.Control = Label1
@@ -38,6 +39,7 @@ object Form_Filter: TForm_Filter
     BorderSpacing.Left = 10
     BorderSpacing.Top = 10
     Caption = 'Spalte'
+    ParentColor = False
   end
   object Edit_Filter: TEdit
     AnchorSideLeft.Control = CoBo_Operator
@@ -61,6 +63,7 @@ object Form_Filter: TForm_Filter
     Top = 10
     Width = 21
     Caption = 'Text'
+    ParentColor = False
   end
   object Btn_Filter: TButton
     AnchorSideLeft.Control = Owner
@@ -354,8 +357,8 @@ object Form_Filter: TForm_Filter
     Width = 571
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Right = 5
-    ClientHeight = 41
-    ClientWidth = 567
+    ClientHeight = 43
+    ClientWidth = 569
     Enabled = False
     TabOrder = 17
     object Label2: TLabel
@@ -368,6 +371,7 @@ object Form_Filter: TForm_Filter
       BorderSpacing.Left = 5
       BorderSpacing.Top = 5
       Caption = 'von'
+      ParentColor = False
     end
     object Date_From: TDateEdit
       AnchorSideLeft.Control = Label2
@@ -409,6 +413,7 @@ object Form_Filter: TForm_Filter
       Width = 15
       BorderSpacing.Left = 5
       Caption = 'bis'
+      ParentColor = False
     end
     object Date_To: TDateEdit
       AnchorSideLeft.Control = Label4

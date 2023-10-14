@@ -8,6 +8,7 @@ object Form_Course: TForm_Course
   ClientWidth = 856
   OnShow = FormShow
   Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
   object PB_Course: TPaintBox
     Left = 0
     Height = 251
