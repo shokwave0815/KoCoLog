@@ -125,13 +125,13 @@ begin
   begin
     case StringGrid_Main.Cells[2, aRow] of
       'WARN': begin
-        StringGrid_Main.canvas.Brush.Color := TColor($10CAEC);
+        StringGrid_Main.canvas.Brush.Color := TColor($CCFFFF);
       end;
       'ERR': begin
-        StringGrid_Main.canvas.Brush.Color := TColor($A0A0FF);
+        StringGrid_Main.canvas.Brush.Color := TColor($CCCCFF);
       end;
       'FATAL': begin
-        StringGrid_Main.canvas.Brush.Color := TColor($D050D0);
+        StringGrid_Main.canvas.Brush.Color := TColor($FFAAFF);
       end;
       else
       begin
