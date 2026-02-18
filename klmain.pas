@@ -9,7 +9,7 @@ uses
   ExtCtrls, StdCtrls, klfilter, Types, INIFiles, kltextutil, klcourse;
 
 const
-  MY_VERSION = 'KoCoLog V0.7.15';
+  MY_VERSION = 'KoCoLog V0.7.16';
 
 type
 
@@ -50,8 +50,7 @@ type
     procedure MenIt_CloseClick(Sender: TObject);
     procedure MenIt_FilterClick(Sender: TObject);
     procedure MenIt_AboutClick(Sender: TObject);
-    procedure StringGrid_MainDrawCell(Sender: TObject; aCol, aRow: integer;
-      aRect: TRect; aState: TGridDrawState);
+    procedure StringGrid_MainDrawCell(Sender: TObject; aCol, aRow: integer; aRect: TRect; aState: TGridDrawState);
     procedure StringGrid_MainSelection(Sender: TObject; aCol, aRow: integer);
   private
     IsStartup: boolean;  //signalisiert ob gerade der Programmstart ausgeführt wird
@@ -63,7 +62,6 @@ type
     procedure ReadConfig();
     procedure SaveConfig();
     procedure OpenFile(Filename: string);
-
   public
 
   end;
@@ -109,8 +107,7 @@ Menü: Über KoCoLog
 ******************************************************************************}
 procedure TForm_Main.MenIt_AboutClick(Sender: TObject);
 begin
-  MessageDlg('Über KoCoLog', MY_VERSION + LineEnding +
-    '©2021-2023 Ingo Steiniger' + LineEnding + LineEnding +
+  MessageDlg('Über KoCoLog', MY_VERSION + LineEnding + '©2021-2023 Ingo Steiniger' + LineEnding + LineEnding +
     'Programm zum anzeigen der .log-Dateien einer KoCoBox.',
     mtInformation, [mbOK], 0);
 end;
@@ -118,11 +115,13 @@ end;
 {******************************************************************************
 Ereignis: Zelle von StringGrid_Main zeichnen
 ******************************************************************************}
-procedure TForm_Main.StringGrid_MainDrawCell(Sender: TObject;
-  aCol, aRow: integer; aRect: TRect; aState: TGridDrawState);
+procedure TForm_Main.StringGrid_MainDrawCell(Sender: TObject; aCol, aRow: integer; aRect: TRect; aState: TGridDrawState);
 begin
   if (not (gdFixed in aState)) then
   begin
+    StringGrid_Main.canvas.Brush.Color := clWhite;
+    StringGrid_Main.Canvas.Font.Color := clBlack;
+
     case StringGrid_Main.Cells[2, aRow] of
       'WARN': begin
         StringGrid_Main.canvas.Brush.Color := TColor($CCFFFF);
@@ -133,15 +132,10 @@ begin
       'FATAL': begin
         StringGrid_Main.canvas.Brush.Color := TColor($FFAAFF);
       end;
-      else
-      begin
-        StringGrid_Main.Canvas.Font.Color := clBlack;
-      end;
     end;
 
     StringGrid_Main.Canvas.FillRect(arect);
-    StringGrid_Main.Canvas.TextOut(aRect.Left + 2, aRect.Top + 2,
-      StringGrid_Main.Cells[aCol, aRow]);
+    StringGrid_Main.Canvas.TextOut(aRect.Left + 2, aRect.Top + 2, StringGrid_Main.Cells[aCol, aRow]);
     StringGrid_Main.Canvas.FrameRect(aRect);
   end;
 end;
@@ -244,18 +238,15 @@ begin
       begin
         SBar.SimpleText := SBar.SimpleText + '(gefiltert)';
       end;
-    end
-    else
+    end else
     begin
       SBar.SimpleText := 'Fehler beim lesen der Datei "' + Filename + '"';
     end;
-  end
-  else
+  end else
   begin
     if (Filename <> '') then
     begin
-      MessageDlg('Fehler', 'Fehler: Die Datei "' + Filename +
-        '" konnte nicht gefunden werden!' + LineEnding +
+      MessageDlg('Fehler', 'Fehler: Die Datei "' + Filename + '" konnte nicht gefunden werden!' + LineEnding +
         'Prüfen Sie ob die Datei existiert und ob Sie Leserechte, für die Datei haben.',
         mtError, [mbOK], 0);
     end;
