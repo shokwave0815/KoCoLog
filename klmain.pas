@@ -107,15 +107,16 @@ Menü: Über KoCoLog
 ******************************************************************************}
 procedure TForm_Main.MenIt_AboutClick(Sender: TObject);
 begin
-  MessageDlg('Über KoCoLog', MY_VERSION + LineEnding + '©2021-2023 Ingo Steiniger' + LineEnding + LineEnding +
-    'Programm zum anzeigen der .log-Dateien einer KoCoBox.',
+  MessageDlg('Über KoCoLog', MY_VERSION + LineEnding + '©2021-2023 Ingo Steiniger' +
+    LineEnding + LineEnding + 'Programm zum anzeigen der .log-Dateien einer KoCoBox.',
     mtInformation, [mbOK], 0);
 end;
 
 {******************************************************************************
 Ereignis: Zelle von StringGrid_Main zeichnen
 ******************************************************************************}
-procedure TForm_Main.StringGrid_MainDrawCell(Sender: TObject; aCol, aRow: integer; aRect: TRect; aState: TGridDrawState);
+procedure TForm_Main.StringGrid_MainDrawCell(Sender: TObject; aCol, aRow: integer; aRect: TRect;
+  aState: TGridDrawState);
 begin
   if (not (gdFixed in aState)) then
   begin
@@ -231,9 +232,11 @@ begin
 
     if (ReadFile(Filename, StringGrid_Main, MenIt_Descending.Checked)) then
     begin
-      StringGrid_MainSelection(nil, 0, 1);
-      SBar.SimpleText :=
-        'Anzahl Einträge: ' + Format('%.0N', [StringGrid_Main.RowCount / 1]);
+      if (StringGrid_Main.RowCount > 1) then
+      begin
+        StringGrid_MainSelection(Self, 0, 1);
+      end;
+      SBar.SimpleText := 'Anzahl Einträge: ' + Format('%.0N', [StringGrid_Main.RowCount / 1]);
       if (Form_Filter.IsFiltered) then
       begin
         SBar.SimpleText := SBar.SimpleText + '(gefiltert)';
@@ -246,8 +249,8 @@ begin
   begin
     if (Filename <> '') then
     begin
-      MessageDlg('Fehler', 'Fehler: Die Datei "' + Filename + '" konnte nicht gefunden werden!' + LineEnding +
-        'Prüfen Sie ob die Datei existiert und ob Sie Leserechte, für die Datei haben.',
+      MessageDlg('Fehler', 'Fehler: Die Datei "' + Filename + '" konnte nicht gefunden werden!' +
+        LineEnding + 'Prüfen Sie ob die Datei existiert und ob Sie Leserechte, für die Datei haben.',
         mtError, [mbOK], 0);
     end;
   end;
