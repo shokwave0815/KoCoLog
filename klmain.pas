@@ -9,7 +9,7 @@ uses
   ExtCtrls, StdCtrls, klfilter, Types, INIFiles, kltextutil, klcourse;
 
 const
-  MY_VERSION = 'KoCoLog V0.7.16';
+  MY_VERSION = 'KoCoLog V0.7.17';
 
 type
 
@@ -17,14 +17,14 @@ type
 
   TForm_Main = class(TForm)
     GroupBox1: TGroupBox;
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
-    Lab_Type: TLabel;
-    Lab_Topic: TLabel;
-    Lab_Time: TLabel;
-    MainMenu1: TMainMenu;
+    Label_Time: TLabel;
+    Label_Topic: TLabel;
+    Label_Type: TLabel;
+    Label_Param: TLabel;
+    Label_Type_Content: TLabel;
+    Label_Topic_Content: TLabel;
+    Label_Time_Content: TLabel;
+    MainMenu: TMainMenu;
     Memo_Param: TMemo;
     MenuItem1: TMenuItem;
     MenIt_Open: TMenuItem;
@@ -39,7 +39,7 @@ type
     N1: TMenuItem;
     OpDi: TOpenDialog;
     StringGrid_Main: TStringGrid;
-    SBar: TStatusBar;
+    StatusBar: TStatusBar;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -53,15 +53,14 @@ type
     procedure StringGrid_MainDrawCell(Sender: TObject; aCol, aRow: integer; aRect: TRect; aState: TGridDrawState);
     procedure StringGrid_MainSelection(Sender: TObject; aCol, aRow: integer);
   private
-    IsStartup: boolean;  //signalisiert ob gerade der Programmstart ausgeführt wird
-    CurrentFile: string;  //Dateiname und Pfad der aktuell geöffneten Datei
-    CfgFileName: string;  //Dateiname und Pfad der Konfigurationsdatei
-    CfgINI: TIniFile;
-    //Höhe und Breite von Form_Main, um sie nach Neustart wiederherzustellen
-    myHeight, myWidth: integer;
+    FIsStartup: boolean;  //signalisiert ob gerade der Programmstart ausgeführt wird
+    FCurrentFile: string;  //Dateiname und Pfad der aktuell geöffneten Datei
+    FCfgFileName: string;  //Dateiname und Pfad der Konfigurationsdatei
+    FCfgINI: TIniFile;
+    FMyHeight, FMyWidth: integer; //Höhe und Breite von Form_Main, um sie nach Neustart wiederherzustellen
     procedure ReadConfig();
     procedure SaveConfig();
-    procedure OpenFile(Filename: string);
+    procedure OpenFile(AFilename: string);
   public
 
   end;
@@ -98,7 +97,7 @@ begin
   //Datei neu laden, wenn jetzt gefiltert wird oder vorher gefiltert wurde und jetzt nicht
   if (Form_Filter.IsFiltered or (WasFilteredBefore <> Form_Filter.IsFiltered)) then
   begin
-    OpenFile(CurrentFile);
+    OpenFile(FCurrentFile);
   end;
 end;
 
@@ -107,7 +106,7 @@ Menü: Über KoCoLog
 ******************************************************************************}
 procedure TForm_Main.MenIt_AboutClick(Sender: TObject);
 begin
-  MessageDlg('Über KoCoLog', MY_VERSION + LineEnding + '©2021-2023 Ingo Steiniger' +
+  MessageDlg('Über KoCoLog', MY_VERSION + LineEnding + '©2021-2026 Ingo Steiniger' +
     LineEnding + LineEnding + 'Programm zum anzeigen der .log-Dateien einer KoCoBox.',
     mtInformation, [mbOK], 0);
 end;
@@ -143,9 +142,9 @@ end;
 
 procedure TForm_Main.StringGrid_MainSelection(Sender: TObject; aCol, aRow: integer);
 begin
-  Lab_Time.Caption := StringGrid_Main.Cells[0, aRow];
-  Lab_Topic.Caption := StringGrid_Main.Cells[1, aRow];
-  Lab_Type.Caption := StringGrid_Main.Cells[2, aRow];
+  Label_Time_Content.Caption := StringGrid_Main.Cells[0, aRow];
+  Label_Topic_Content.Caption := StringGrid_Main.Cells[1, aRow];
+  Label_Type_Content.Caption := StringGrid_Main.Cells[2, aRow];
   Memo_Param.Text := StringGrid_Main.Cells[3, aRow];
   aCol := aCol;
 end;
@@ -155,31 +154,31 @@ Prozedur: Konfigurationsdatei lesen
 ******************************************************************************}
 procedure TForm_Main.ReadConfig();
 begin
-  cfgINI := TINIFile.Create(CfgFileName);
+  FCfgINI := TINIFile.Create(FCfgFileName);
 
   //Dimension und Position der MainForm
-  Top := Scale96ToScreen(cfgINI.ReadInteger('Window', 'Top', 100));
-  Left := Scale96ToScreen(cfgINI.ReadInteger('Window', 'Left', 200));
-  Width := Scale96ToForm(cfgINI.ReadInteger('Window', 'Width', 800));
-  Height := Scale96ToForm(cfgINI.ReadInteger('Window', 'Height', 600));
-  WindowState := TWindowState(cfgINI.ReadInteger('Window', 'State', 0));
-  myHeight := Height;
-  myWidth := Width;
+  Top := Scale96ToScreen(FCfgINI.ReadInteger('Window', 'Top', 100));
+  Left := Scale96ToScreen(FCfgINI.ReadInteger('Window', 'Left', 200));
+  Width := Scale96ToForm(FCfgINI.ReadInteger('Window', 'Width', 800));
+  Height := Scale96ToForm(FCfgINI.ReadInteger('Window', 'Height', 600));
+  WindowState := TWindowState(FCfgINI.ReadInteger('Window', 'State', 0));
+  FMyHeight := Height;
+  FMyWidth := Width;
 
   //Größe der Spalten des StringGrid
   StringGrid_Main.Columns.Items[0].Width :=
-    Scale96ToForm(cfgINI.ReadInteger('SG', '0', 150));
+    Scale96ToForm(FCfgINI.ReadInteger('SG', '0', 150));
   StringGrid_Main.Columns.Items[1].Width :=
-    Scale96ToForm(cfgINI.ReadInteger('SG', '1', 300));
+    Scale96ToForm(FCfgINI.ReadInteger('SG', '1', 300));
   StringGrid_Main.Columns.Items[2].Width :=
-    Scale96ToForm(cfgINI.ReadInteger('SG', '2', 64));
+    Scale96ToForm(FCfgINI.ReadInteger('SG', '2', 64));
   StringGrid_Main.Columns.Items[3].Width :=
-    Scale96ToForm(cfgINI.ReadInteger('SG', '3', 1000));
+    Scale96ToForm(FCfgINI.ReadInteger('SG', '3', 1000));
 
   //Option auf-/absteigende Reihenfolge
-  MenIt_Descending.Checked := cfgINI.ReadBool('Option', 'Asc', False);
+  MenIt_Descending.Checked := FCfgINI.ReadBool('Option', 'Asc', False);
 
-  FreeAndNil(CfgINI);
+  FreeAndNil(FCfgINI);
 end;
 
 {******************************************************************************
@@ -187,33 +186,33 @@ Prozedur: Konfigurationsdatei speichern
 ******************************************************************************}
 procedure TForm_Main.SaveConfig();
 begin
-  cfgINI := TINIFile.Create(cfgFileName);
+  FCfgINI := TINIFile.Create(FCfgFileName);
 
   //Dimension und Position der MainForm
   if (WindowState = wsNormal) then //nicht speichern, wenn maximiert, minimiert
   begin
-    cfgINI.WriteInteger('Window', 'Top', ScaleScreenTo96(Top));
-    cfgINI.WriteInteger('Window', 'Left', ScaleScreenTo96(Left));
-    cfgINI.WriteInteger('Window', 'Width', ScaleFormTo96(Width));
-    cfgINI.WriteInteger('Window', 'Height', ScaleFormTo96(Height));
+    FCfgINI.WriteInteger('Window', 'Top', ScaleScreenTo96(Top));
+    FCfgINI.WriteInteger('Window', 'Left', ScaleScreenTo96(Left));
+    FCfgINI.WriteInteger('Window', 'Width', ScaleFormTo96(Width));
+    FCfgINI.WriteInteger('Window', 'Height', ScaleFormTo96(Height));
   end;
-  cfgINI.WriteInteger('Window', 'State', Ord(WindowState));
+  FCfgINI.WriteInteger('Window', 'State', Ord(WindowState));
 
   //Größe der Spalten des StringGrid
-  cfgINI.WriteInteger('SG', '0',
+  FCfgINI.WriteInteger('SG', '0',
     ScaleFormTo96(StringGrid_Main.Columns.Items[0].Width));
-  cfgINI.WriteInteger('SG', '1',
+  FCfgINI.WriteInteger('SG', '1',
     ScaleFormTo96(StringGrid_Main.Columns.Items[1].Width));
-  cfgINI.WriteInteger('SG', '2',
+  FCfgINI.WriteInteger('SG', '2',
     ScaleFormTo96(StringGrid_Main.Columns.Items[2].Width));
-  cfgINI.WriteInteger('SG', '3',
+  FCfgINI.WriteInteger('SG', '3',
     ScaleFormTo96(StringGrid_Main.Columns.Items[3].Width));
 
 
   //Option auf-/absteigende Reihenfolge
-  cfgINI.WriteBool('Option', 'Asc', MenIt_Descending.Checked);
+  FCfgINI.WriteBool('Option', 'Asc', MenIt_Descending.Checked);
 
-  FreeAndNil(cfgINI);
+  FreeAndNil(FCfgINI);
 end;
 
 {*******************************************************************************
@@ -221,35 +220,35 @@ Prozedur: Datei öffnen und Anzahl Einträge in der Statusbar anzeigen
 Beschreibung: Vor- und Nachbereitung zum öffenen der Datei
 Parameter: aFilename = vollständiger Dateiname mit Pfad
 *******************************************************************************}
-procedure TForm_Main.OpenFile(Filename: string);
+procedure TForm_Main.OpenFile(AFilename: string);
 begin
-  if (FileExists(Filename)) then
+  if (FileExists(AFilename)) then
   begin
-    CurrentFile := Filename;
-    Caption := MY_VERSION + ' - ' + Filename;
-    Sbar.SimpleText := 'verarbeite Daten...';
+    FCurrentFile := AFilename;
+    Caption := MY_VERSION + ' - ' + AFilename;
+    StatusBar.SimpleText := 'verarbeite Daten...';
     Application.ProcessMessages();
 
-    if (ReadFile(Filename, StringGrid_Main, MenIt_Descending.Checked)) then
+    if (ReadFile(AFilename, StringGrid_Main, MenIt_Descending.Checked)) then
     begin
       if (StringGrid_Main.RowCount > 1) then
       begin
         StringGrid_MainSelection(Self, 0, 1);
       end;
-      SBar.SimpleText := 'Anzahl Einträge: ' + Format('%.0N', [StringGrid_Main.RowCount / 1]);
+      StatusBar.SimpleText := 'Anzahl Einträge: ' + Format('%.0N', [StringGrid_Main.RowCount / 1]);
       if (Form_Filter.IsFiltered) then
       begin
-        SBar.SimpleText := SBar.SimpleText + '(gefiltert)';
+        StatusBar.SimpleText := StatusBar.SimpleText + '(gefiltert)';
       end;
     end else
     begin
-      SBar.SimpleText := 'Fehler beim lesen der Datei "' + Filename + '"';
+      StatusBar.SimpleText := 'Fehler beim lesen der Datei "' + AFilename + '"';
     end;
   end else
   begin
-    if (Filename <> '') then
+    if (AFilename <> '') then
     begin
-      MessageDlg('Fehler', 'Fehler: Die Datei "' + Filename + '" konnte nicht gefunden werden!' +
+      MessageDlg('Fehler', 'Fehler: Die Datei "' + AFilename + '" konnte nicht gefunden werden!' +
         LineEnding + 'Prüfen Sie ob die Datei existiert und ob Sie Leserechte, für die Datei haben.',
         mtError, [mbOK], 0);
     end;
@@ -282,12 +281,12 @@ Ereignis:Programmstart
 procedure TForm_Main.FormCreate(Sender: TObject);
 begin
   Caption := MY_VERSION;
-  IsStartup := True;
-  CurrentFile := '';
+  FIsStartup := True;
+  FCurrentFile := '';
 
-  CfgFileName := GetAppConfigDir(False);
-  ForceDirectories(CfgFileName); //sicherstellen, dass das Verzeichnis existiert
-  CfgFileName += 'config.ini';
+  FCfgFileName := GetAppConfigDir(False);
+  ForceDirectories(FCfgFileName); //sicherstellen, dass das Verzeichnis existiert
+  FCfgFileName += 'config.ini';
   ReadConfig();
 end;
 
@@ -296,15 +295,15 @@ Ereignis: Programmstart #2
 *******************************************************************************}
 procedure TForm_Main.FormShow(Sender: TObject);
 begin
-  if (IsStartup) then
+  if (FIsStartup) then
   begin  //Aufrufparameter auswerten
+    Form_Filter.IsFiltered := False;
     if (ParamCount > 0) then
     begin
-      Form_Filter.IsFiltered := False;
       //Datei mit OpenFile() öffnen, damit der Filter aufgerufen wird!
       OpenFile(ParamStr(1));
     end;
-    isStartup := False;
+    FIsStartup := False;
   end;
 end;
 
@@ -318,8 +317,8 @@ begin
   if (WindowState = wsNormal) then
   begin
     Sleep(10); //ohne sleep reduziert sich das Fenster zur Unkenntlichkeit
-    Height := myHeight;
-    Width := myWidth;
+    Height := FMyHeight;
+    Width := FMyWidth;
   end;
 end;
 
@@ -338,7 +337,7 @@ Menü: chronologisch auf- oder absteigende Reihenfolge der Einträge
 procedure TForm_Main.MenIt_DescendingClick(Sender: TObject);
 begin
   MenIt_Descending.Checked := not MenIt_Descending.Checked;
-  OpenFile(CurrentFile);
+  OpenFile(FCurrentFile);
 end;
 
 end.

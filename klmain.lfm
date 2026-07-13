@@ -7,7 +7,7 @@ object Form_Main: TForm_Main
   ClientHeight = 780
   ClientWidth = 1478
   DesignTimePPI = 144
-  Menu = MainMenu1
+  Menu = MainMenu
   LCLVersion = '4.99.0.0'
   OnClose = FormClose
   OnCreate = FormCreate
@@ -20,7 +20,7 @@ object Form_Main: TForm_Main
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = GroupBox1
     Left = 0
-    Height = 591
+    Height = 589
     Top = 0
     Width = 1478
     Align = alCustom
@@ -67,79 +67,79 @@ object Form_Main: TForm_Main
       'Zeit'
     )
   end
-  object SBar: TStatusBar
+  object StatusBar: TStatusBar
     AnchorSideLeft.Control = Owner
     AnchorSideRight.Control = Owner
     AnchorSideBottom.Control = Owner
     Left = 0
-    Height = 23
-    Top = 746
-    Width = 985
+    Height = 36
+    Top = 744
+    Width = 1478
     Panels = <>
     ParentFont = False
   end
   object GroupBox1: TGroupBox
     Left = 0
     Height = 155
-    Top = 591
+    Top = 589
     Width = 1478
     Align = alBottom
     Caption = 'Details'
-    ClientHeight = 137
-    ClientWidth = 1476
+    ClientHeight = 125
+    ClientWidth = 1474
     TabOrder = 2
-    object Label1: TLabel
+    object Label_Time: TLabel
       AnchorSideLeft.Control = GroupBox1
       AnchorSideTop.Control = GroupBox1
       Left = 8
-      Height = 15
+      Height = 25
       Top = 8
-      Width = 23
+      Width = 33
       BorderSpacing.Left = 8
       BorderSpacing.Top = 8
       Caption = 'Zeit:'
       ParentColor = False
     end
-    object Label2: TLabel
-      AnchorSideLeft.Control = Label1
-      AnchorSideTop.Control = Label1
+    object Label_Topic: TLabel
+      AnchorSideLeft.Control = Label_Time
+      AnchorSideTop.Control = Label_Time
       AnchorSideTop.Side = asrBottom
       Left = 8
-      Height = 15
-      Top = 38
-      Width = 37
+      Height = 25
+      Top = 41
+      Width = 55
       BorderSpacing.Top = 8
       Caption = 'Rubrik:'
       ParentColor = False
     end
-    object Label3: TLabel
-      AnchorSideLeft.Control = Label1
-      AnchorSideTop.Control = Label2
+    object Label_Type: TLabel
+      AnchorSideLeft.Control = Label_Time
+      AnchorSideTop.Control = Label_Topic
       AnchorSideTop.Side = asrBottom
       Left = 8
-      Height = 15
-      Top = 68
-      Width = 18
+      Height = 25
+      Top = 74
+      Width = 28
       BorderSpacing.Top = 8
       Caption = 'Typ'
       ParentColor = False
     end
-    object Label4: TLabel
-      AnchorSideLeft.Control = Lab_Time
+    object Label_Param: TLabel
+      AnchorSideLeft.Control = Label_Time_Content
       AnchorSideLeft.Side = asrBottom
-      AnchorSideTop.Control = Label1
-      Left = 310
-      Height = 15
+      AnchorSideTop.Control = Label_Time
+      Left = 297
+      Height = 25
       Top = 8
-      Width = 57
+      Width = 83
       Anchors = [akTop]
       Caption = 'Parameter:'
       ParentColor = False
     end
     object Memo_Param: TMemo
-      AnchorSideLeft.Control = Label4
+      AnchorSideLeft.Control = Label_Param
       AnchorSideLeft.Side = asrBottom
-      AnchorSideTop.Control = Label4
+      AnchorSideTop.Control = Label_Param
       AnchorSideRight.Control = GroupBox1
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = GroupBox1
@@ -147,7 +147,7 @@ object Form_Main: TForm_Main
       Left = 388
       Height = 109
       Top = 8
-      Width = 1076
+      Width = 1078
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderSpacing.Left = 8
       BorderSpacing.Right = 8
@@ -155,46 +155,46 @@ object Form_Main: TForm_Main
       ScrollBars = ssAutoBoth
       TabOrder = 0
     end
-    object Lab_Time: TLabel
-      AnchorSideLeft.Control = Label2
+    object Label_Time_Content: TLabel
+      AnchorSideLeft.Control = Label_Topic
       AnchorSideLeft.Side = asrBottom
-      AnchorSideTop.Control = Label1
-      AnchorSideRight.Control = Label4
-      Left = 70
+      AnchorSideTop.Control = Label_Time
+      AnchorSideRight.Control = Label_Param
+      Left = 71
       Height = 1
       Top = 8
-      Width = 145
+      Width = 218
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Left = 8
       BorderSpacing.Right = 8
       ParentColor = False
     end
-    object Lab_Topic: TLabel
-      AnchorSideLeft.Control = Lab_Time
-      AnchorSideTop.Control = Label2
-      AnchorSideRight.Control = Label4
-      Left = 70
+    object Label_Topic_Content: TLabel
+      AnchorSideLeft.Control = Label_Time_Content
+      AnchorSideTop.Control = Label_Topic
+      AnchorSideRight.Control = Label_Param
+      Left = 71
       Height = 1
-      Top = 38
-      Width = 145
+      Top = 41
+      Width = 218
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Right = 8
       ParentColor = False
     end
-    object Lab_Type: TLabel
-      AnchorSideLeft.Control = Lab_Topic
-      AnchorSideTop.Control = Label3
-      AnchorSideRight.Control = Label4
-      Left = 70
+    object Label_Type_Content: TLabel
+      AnchorSideLeft.Control = Label_Topic_Content
+      AnchorSideTop.Control = Label_Type
+      AnchorSideRight.Control = Label_Param
+      Left = 71
       Height = 1
-      Top = 68
-      Width = 145
+      Top = 74
+      Width = 218
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Right = 8
       ParentColor = False
     end
   end
-  object MainMenu1: TMainMenu
+  object MainMenu: TMainMenu
     Left = 53
     Top = 44
     object MenuItem1: TMenuItem
