@@ -1,14 +1,13 @@
 object Form_Main: TForm_Main
   Left = 392
-  Height = 780
+  Height = 520
   Top = 111
-  Width = 1478
+  Width = 985
   Caption = 'KoCoLog'
-  ClientHeight = 780
-  ClientWidth = 1478
-  DesignTimePPI = 144
+  ClientHeight = 520
+  ClientWidth = 985
   Menu = MainMenu
-  LCLVersion = '4.99.0.0'
+  LCLVersion = '4.4.0.0'
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
@@ -30,24 +29,25 @@ object Form_Main: TForm_Main
     Columns = <    
       item
         Title.Caption = 'Zeit'
-        Width = 225
+        Width = 150
       end    
       item
-        MaxSize = 3000
+        MaxSize = 2000
         Title.Caption = 'Rubrik'
-        Width = 450
+        Width = 300
       end    
       item
         Title.Caption = 'Typ'
-        Width = 96
+        Width = 64
       end    
       item
-        MaxSize = 3000
+        MaxSize = 2000
         Title.Caption = 'Parameter'
-        Width = 1500
+        Width = 1000
       end>
     ExtendedSelect = False
     FixedCols = 0
+    MouseWheelOption = mwGrid
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goRowSelect, goSmoothScroll, goScrollKeepVisible]
     ParentFont = False
     RowCount = 1
@@ -55,10 +55,10 @@ object Form_Main: TForm_Main
     OnDrawCell = StringGrid_MainDrawCell
     OnSelection = StringGrid_MainSelection
     ColWidths = (
-      225
-      450
-      96
-      1500
+      150
+      300
+      64
+      1000
     )
     Cells = (
       1
@@ -80,23 +80,23 @@ object Form_Main: TForm_Main
   end
   object GroupBox1: TGroupBox
     Left = 0
-    Height = 155
-    Top = 589
+    Height = 103
+    Top = 641
     Width = 1478
     Align = alBottom
     Caption = 'Details'
-    ClientHeight = 125
+    ClientHeight = 73
     ClientWidth = 1474
     TabOrder = 2
     object Label_Time: TLabel
       AnchorSideLeft.Control = GroupBox1
       AnchorSideTop.Control = GroupBox1
-      Left = 8
+      Left = 5
       Height = 25
-      Top = 8
+      Top = 5
       Width = 33
-      BorderSpacing.Left = 8
-      BorderSpacing.Top = 8
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
       Caption = 'Zeit:'
       ParentColor = False
     end
@@ -104,11 +104,11 @@ object Form_Main: TForm_Main
       AnchorSideLeft.Control = Label_Time
       AnchorSideTop.Control = Label_Time
       AnchorSideTop.Side = asrBottom
-      Left = 8
+      Left = 5
       Height = 25
-      Top = 41
+      Top = 27
       Width = 55
-      BorderSpacing.Top = 8
+      BorderSpacing.Top = 5
       Caption = 'Rubrik:'
       ParentColor = False
     end
@@ -116,11 +116,11 @@ object Form_Main: TForm_Main
       AnchorSideLeft.Control = Label_Time
       AnchorSideTop.Control = Label_Topic
       AnchorSideTop.Side = asrBottom
-      Left = 8
+      Left = 5
       Height = 25
-      Top = 74
+      Top = 49
       Width = 28
-      BorderSpacing.Top = 8
+      BorderSpacing.Top = 5
       Caption = 'Typ'
       ParentColor = False
     end
@@ -130,7 +130,7 @@ object Form_Main: TForm_Main
       AnchorSideTop.Control = Label_Time
       Left = 297
       Height = 25
-      Top = 8
+      Top = 5
       Width = 83
       Anchors = [akTop]
       Caption = 'Parameter:'
@@ -144,14 +144,14 @@ object Form_Main: TForm_Main
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = GroupBox1
       AnchorSideBottom.Side = asrBottom
-      Left = 388
+      Left = 259
       Height = 109
-      Top = 8
+      Top = 5
       Width = 1078
       Anchors = [akTop, akLeft, akRight, akBottom]
-      BorderSpacing.Left = 8
-      BorderSpacing.Right = 8
-      BorderSpacing.Bottom = 8
+      BorderSpacing.Left = 5
+      BorderSpacing.Right = 5
+      BorderSpacing.Bottom = 5
       ScrollBars = ssAutoBoth
       TabOrder = 0
     end
@@ -160,43 +160,43 @@ object Form_Main: TForm_Main
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = Label_Time
       AnchorSideRight.Control = Label_Param
-      Left = 71
+      Left = 47
       Height = 1
-      Top = 8
+      Top = 5
       Width = 218
       Anchors = [akTop, akLeft, akRight]
-      BorderSpacing.Left = 8
-      BorderSpacing.Right = 8
+      BorderSpacing.Left = 5
+      BorderSpacing.Right = 5
       ParentColor = False
     end
     object Label_Topic_Content: TLabel
       AnchorSideLeft.Control = Label_Time_Content
       AnchorSideTop.Control = Label_Topic
       AnchorSideRight.Control = Label_Param
-      Left = 71
+      Left = 47
       Height = 1
-      Top = 41
+      Top = 27
       Width = 218
       Anchors = [akTop, akLeft, akRight]
-      BorderSpacing.Right = 8
+      BorderSpacing.Right = 5
       ParentColor = False
     end
     object Label_Type_Content: TLabel
       AnchorSideLeft.Control = Label_Topic_Content
       AnchorSideTop.Control = Label_Type
       AnchorSideRight.Control = Label_Param
-      Left = 71
+      Left = 47
       Height = 1
-      Top = 74
+      Top = 49
       Width = 218
       Anchors = [akTop, akLeft, akRight]
-      BorderSpacing.Right = 8
+      BorderSpacing.Right = 5
       ParentColor = False
     end
   end
   object MainMenu: TMainMenu
-    Left = 53
-    Top = 44
+    Left = 35
+    Top = 29
     object MenuItem1: TMenuItem
       Caption = '&Datei'
       object MenIt_Open: TMenuItem
@@ -246,7 +246,7 @@ object Form_Main: TForm_Main
     Filter = 'Logfile(*.log)|*.log|Alle Dateien|*.*'
     FilterIndex = 0
     InitialDir = '.'
-    Left = 168
-    Top = 44
+    Left = 112
+    Top = 29
   end
 end
