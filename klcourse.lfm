@@ -6,9 +6,9 @@ object Form_Course: TForm_Course
   Caption = 'Verlauf'
   ClientHeight = 251
   ClientWidth = 856
-  OnShow = FormShow
   Position = poMainFormCenter
-  LCLVersion = '2.2.6.0'
+  LCLVersion = '4.4.0.0'
+  OnShow = FormShow
   object PB_Course: TPaintBox
     Left = 0
     Height = 251

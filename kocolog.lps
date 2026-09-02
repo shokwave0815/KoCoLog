@@ -19,7 +19,6 @@
         <ComponentName Value="Form_Main"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <CursorPos Y="22"/>
         <UsageCount Value="37"/>
         <Loaded Value="True"/>
@@ -51,9 +50,10 @@
         <ComponentName Value="Form_Course"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="100"/>
-        <CursorPos X="11" Y="119"/>
+        <TopLine Value="146"/>
+        <CursorPos X="50" Y="156"/>
         <UsageCount Value="37"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -85,123 +85,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="klfilter.pas"/>
-        <Caret Line="297" TopLine="282"/>
+        <Caret Line="213" TopLine="197"/>
       </Position1>
       <Position2>
         <Filename Value="klfilter.pas"/>
-        <Caret Line="213" TopLine="197"/>
+        <Caret Line="299" TopLine="284"/>
       </Position2>
       <Position3>
-        <Filename Value="klfilter.pas"/>
-        <Caret Line="299" TopLine="284"/>
+        <Filename Value="klmain.pas"/>
+        <Caret Line="12" Column="34"/>
       </Position3>
       <Position4>
         <Filename Value="klmain.pas"/>
-        <Caret Line="12" Column="34"/>
+        <Caret Line="65" Column="24" TopLine="50"/>
       </Position4>
       <Position5>
         <Filename Value="klmain.pas"/>
-        <Caret Line="65" Column="24" TopLine="50"/>
+        <Caret Line="234" Column="68"/>
       </Position5>
       <Position6>
         <Filename Value="klmain.pas"/>
-        <Caret Line="234" Column="68"/>
+        <Caret Line="231" Column="13" TopLine="218"/>
       </Position6>
       <Position7>
         <Filename Value="klmain.pas"/>
-        <Caret Line="231" Column="13" TopLine="218"/>
+        <Caret Line="12" Column="32"/>
       </Position7>
       <Position8>
         <Filename Value="klmain.pas"/>
-        <Caret Line="12" Column="32"/>
+        <Caret Line="101" Column="11" TopLine="86"/>
       </Position8>
       <Position9>
         <Filename Value="klmain.pas"/>
-        <Caret Line="101" Column="11" TopLine="86"/>
+        <Caret Line="64" Column="18" TopLine="54"/>
       </Position9>
       <Position10>
         <Filename Value="klmain.pas"/>
-        <Caret Line="64" Column="18" TopLine="54"/>
+        <Caret Line="233" Column="15" TopLine="226"/>
       </Position10>
       <Position11>
-        <Filename Value="klmain.pas"/>
-        <Caret Line="233" Column="15" TopLine="226"/>
+        <Filename Value="kltextutil.pas"/>
+        <Caret Line="10" Column="11"/>
       </Position11>
       <Position12>
         <Filename Value="kltextutil.pas"/>
-        <Caret Line="10" Column="11"/>
+        <Caret Line="40" Column="24" TopLine="33"/>
       </Position12>
       <Position13>
         <Filename Value="kltextutil.pas"/>
-        <Caret Line="40" Column="24" TopLine="33"/>
+        <Caret Line="11" Column="11"/>
       </Position13>
       <Position14>
-        <Filename Value="kltextutil.pas"/>
-        <Caret Line="11" Column="11"/>
+        <Filename Value="klmain.pas"/>
+        <Caret Line="237" Column="26" TopLine="227"/>
       </Position14>
       <Position15>
         <Filename Value="klmain.pas"/>
-        <Caret Line="237" Column="26" TopLine="227"/>
+        <Caret Line="54" Column="15" TopLine="44"/>
       </Position15>
       <Position16>
         <Filename Value="klmain.pas"/>
-        <Caret Line="54" Column="15" TopLine="44"/>
+        <Caret Line="233" Column="14" TopLine="230"/>
       </Position16>
       <Position17>
-        <Filename Value="klmain.pas"/>
-        <Caret Line="233" Column="14" TopLine="230"/>
-      </Position17>
-      <Position18>
         <Filename Value="kltextutil.pas"/>
         <Caret Line="10" Column="10"/>
+      </Position17>
+      <Position18>
+        <Filename Value="klmain.pas"/>
+        <Caret Line="44" Column="21" TopLine="38"/>
       </Position18>
       <Position19>
         <Filename Value="klmain.pas"/>
-        <Caret Line="44" Column="21" TopLine="38"/>
+        <Caret Line="301" TopLine="291"/>
       </Position19>
       <Position20>
         <Filename Value="klmain.pas"/>
-        <Caret Line="301" TopLine="291"/>
+        <Caret Line="52" Column="26" TopLine="35"/>
       </Position20>
       <Position21>
         <Filename Value="klmain.pas"/>
-        <Caret Line="52" Column="26" TopLine="35"/>
+        <Caret Line="44" Column="23" TopLine="40"/>
       </Position21>
       <Position22>
         <Filename Value="klmain.pas"/>
-        <Caret Line="44" Column="23" TopLine="40"/>
+        <Caret Line="304" Column="12" TopLine="295"/>
       </Position22>
       <Position23>
         <Filename Value="klmain.pas"/>
-        <Caret Line="304" Column="12" TopLine="295"/>
+        <Caret Line="63" Column="15" TopLine="53"/>
       </Position23>
       <Position24>
         <Filename Value="klmain.pas"/>
-        <Caret Line="63" Column="15" TopLine="53"/>
+        <Caret Line="56" Column="15" TopLine="44"/>
       </Position24>
       <Position25>
         <Filename Value="klmain.pas"/>
-        <Caret Line="56" Column="15" TopLine="44"/>
+        <Caret Line="57" Column="17" TopLine="44"/>
       </Position25>
       <Position26>
         <Filename Value="klmain.pas"/>
-        <Caret Line="57" Column="17" TopLine="44"/>
+        <Caret Line="58" Column="17" TopLine="44"/>
       </Position26>
       <Position27>
         <Filename Value="klmain.pas"/>
-        <Caret Line="58" Column="17" TopLine="44"/>
+        <Caret Line="59" Column="12" TopLine="44"/>
       </Position27>
       <Position28>
         <Filename Value="klmain.pas"/>
-        <Caret Line="59" Column="12" TopLine="44"/>
+        <Caret Line="60" Column="24" TopLine="44"/>
       </Position28>
       <Position29>
         <Filename Value="klmain.pas"/>
-        <Caret Line="60" Column="24" TopLine="44"/>
+        <Caret Line="63" Column="33" TopLine="44"/>
       </Position29>
       <Position30>
-        <Filename Value="klmain.pas"/>
-        <Caret Line="63" Column="33" TopLine="44"/>
+        <Filename Value="klcourse.pas"/>
+        <Caret Line="34" Column="23" TopLine="15"/>
       </Position30>
     </JumpHistory>
     <RunParams>

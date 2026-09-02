@@ -153,7 +153,7 @@ var
   x, y1, y2: integer;
 begin
   StartDay := MinutesBetween(FirstDay, EndOfTheDay(FirstDay));
-  DaysCount := DaysBetween(FirstDay, LastDay);
+  DaysCount := DaysBetween(FirstDay, LastDay) + 1;
 
   PB_Course.Canvas.Pen.Color := clSilver;
 
