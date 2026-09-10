@@ -61,6 +61,8 @@
             <CompilerMessages>
               <IgnoredMessages idx5024="True"/>
             </CompilerMessages>
+            <CustomOptions Value="if TargetOS=&apos;darwin&apos; then
+  CustomOptions := &apos;-WM10.15&apos;;"/>
           </Other>
         </CompilerOptions>
       </Item2>
